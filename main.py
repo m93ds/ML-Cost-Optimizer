@@ -1,8 +1,3 @@
-# Crear una copia de seguridad
-cp main.py main.py.backup
-
-# Crear el nuevo main.py mejorado
-cat > main.py << 'EOF'
 from fastapi import FastAPI, HTTPException
 import pandas as pd
 import joblib
@@ -138,4 +133,3 @@ def predecir_costo(vm_instances: int, storage_gb: int, network_gb: float):
         }
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Error en predicción: {str(e)}")
-EOF
